@@ -112,3 +112,4 @@ dmypy.json
 *.pyc
 # static/
 # README.md
+data

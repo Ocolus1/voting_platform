@@ -91,11 +91,20 @@ WSGI_APPLICATION = 'e_voting.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    #   You can use this :
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env("DBNAME"),
+        'USER': env("DBUSER"),
+        'PASSWORD': env("DBPASSWORD"),
+        'HOST': env("DBHOST"),
+        'PORT': env("DBPORT"),
     }
+
+    #   You can use this :
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
@@ -167,3 +176,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = USER_EMAIL
 EMAIL_HOST_PASSWORD = PASSWORD
 EMAIL_USE_TLS = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
