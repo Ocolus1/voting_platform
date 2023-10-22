@@ -8,7 +8,16 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Install system packages required by the Django application and its dependencies
-RUN apt-get update && apt-get install -y libglib2.0-0 && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    libglib2.0-0 \
+    libpango1.0-0 \
+    libcairo2 \
+    libffi-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libpangoft2-1.0-0 \
+    libharfbuzz0b \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
 WORKDIR /app
