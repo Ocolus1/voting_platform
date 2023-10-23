@@ -185,4 +185,4 @@ CSRF_TRUSTED_ORIGINS = [
     PROD_URL,
 ]
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
