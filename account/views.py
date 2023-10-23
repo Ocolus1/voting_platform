@@ -117,6 +117,8 @@ def account_login(request):
 
 
 def account_register(request):
+    if request.method == 'GET':
+        return redirect(reverse('account_login'))
     userForm = CustomUserForm(request.POST or None)
     voterForm = VoterForm(request.POST or None)
     context = {
